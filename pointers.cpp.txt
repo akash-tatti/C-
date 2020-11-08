@@ -1,0 +1,35 @@
+
+#include<iostream.h>
+#include<conio.h>
+class  student
+{
+int regno;
+char name[20];
+float fees;
+public: void read();
+            void display();
+};
+void student::read()
+{
+cout<<"enter the register number: ";
+cin>>regno;
+cout<<"enter the student name: ";
+cin>>name;
+cout<<"enter the fees: ";
+cin>>fees;
+}
+void student::display()
+{
+cout<<"register number="<<regno<<endl;
+cout<<"student name="<<name<<endl;
+cout<<"student fees="<<fees;
+}
+void main()
+{
+student s,*sp;
+sp=&s;
+clrscr();
+sp->read();
+sp->display();
+getch();
+}

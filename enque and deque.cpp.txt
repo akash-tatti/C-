@@ -1,0 +1,64 @@
+#include<iostream.h>
+#include<conio.h>
+#include<stdlib.h>
+#define N 5
+void main()
+{
+int q[N],front=-1,rear=-1,choice=1,item,i;
+clrscr();
+while(choice)
+{
+cout<<"\n QUEUE OPERATIONS:\n";
+cout<<"\n1.INSERT\n2.DELETE\n3.DISPLAY\4.EXIT\n";
+cout<<choice;
+switch(choice)
+{
+case 1: if(rear==N-1)
+            {
+            cout<<"\nQueue is full";
+            continue;
+            }
+            else
+            {
+            cout<<"Enter the element to be inserted: ";
+            cin>>item;
+            rear=rear+1;
+            q[rear]=item;
+            cout<<item<<" is inserted at q["<<rear<<"]="<<q[rear]<<endl;
+            if(front==-1)
+            front=front+1;
+            }
+            break;
+case 2: if(front==rear)
+            {
+            front=-1;
+            rear=-1;
+            cout<<"\nQueue is empty";
+            }
+            else
+            {
+            item=q[front];
+            cout<<"The element deleted from "<<front<<" position is "<<item;
+            front=front+1;
+            }
+            break;
+case 3: if(front==-1)
+            {
+            cout<<"\nQueue is empty\n";
+            continue;
+            }
+            else
+            {
+            cout<<"\nStatus of Queue:\n";
+            for(i=front;i<=rear;i++)
+            cout<<"q["<<i<<"]="<<q[i]<<endl;
+            }
+            break;
+case 4: exit(0);
+            break;
+default: cout<<"Invalid Choice";
+}
+}
+}
+getch();
+}

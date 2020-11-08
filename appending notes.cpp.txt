@@ -1,0 +1,78 @@
+#include<iostream.h>
+#include<conio.h>
+class linklist
+{
+struct Node
+{
+int data;
+Node*link;
+}*START;
+public:linklist();
+       void print();
+       void Append(int num);
+       void count();
+};
+linklist::linklist()
+{
+START=NULL;
+}
+void linklist::print()
+{
+if(START==NULL)
+{
+cout<<"linked list is empty\n";
+return;
+}
+cout<<"\nlinked list contains";
+Node*p=START;
+while(p!=NULL)
+{
+cout<<p->data<<" ";
+p=p->link;
+}
+}
+void linklist::Append(int num)
+{
+Node *newNode;
+newNode=new Node;
+newNode->data=num;
+newNode->link=NULL;
+if(START==NULL)
+{
+START=newNode;
+cout<<num<<"is inserted as the first node";
+}
+else
+{
+Node *p=START;
+while(p->link!=NULL)
+p=p->link;
+p->link=newNode;
+cout<<endl<<num<<"is inserted"<<endl;
+}
+}
+void linklist::count()
+{
+Node*p;
+int c=0;
+for(p=START;p!=NULL;p=p->link)
+c++;
+cout<<endl<<"number of elements in the linked list="<<c<<endl;
+}
+void main()
+{
+linklist *obj=new linklist;
+clrscr();
+obj->print();
+obj->Append(100);
+obj->print();
+obj->count();
+obj->Append(200);
+obj->print();
+obj->count();
+obj->Append(300);
+obj->print();
+obj->count();
+getch();
+}
+

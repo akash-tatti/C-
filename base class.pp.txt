@@ -1,0 +1,47 @@
+#include<iostream.h>
+#include<conio.h>
+class abc
+{
+int rollno;
+char name[20];
+public:
+            void read()
+            {
+            cout<<"enter roll no and name"<<endl;
+            cin>>rollno>>name;
+            }
+            void display()
+            {
+            cout<<"roll no:"<<rollno<<endl;
+            cout<<"name:"<<name<<endl;
+            }
+};
+class xyz:public abc
+{
+int m1;
+int m2;
+int t;
+public:
+            void read1()
+            {
+            cout<<"enter the first marks & second marks:";
+            cin>>m1>>m2;
+            t=m1+m2;
+            }
+            void display1()
+            {
+            cout<<"first marks="<<m1<<endl;
+            cout<<"second marks="<<m2<<endl;
+            cout<<"total marks="<<t<<endl;
+            }
+};
+void main()
+{
+xyz ob;
+clrscr();
+ob.read();
+ob.read1();
+ob.display();
+ob.display1();
+getch();
+}

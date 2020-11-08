@@ -1,0 +1,51 @@
+
+#include<iostream.h>
+#include<conio.h>
+#include<stdlib.h>
+#define N 5
+void main()
+{
+int stack[N]={10,20,30,40,50};
+int choice=1,ele,top=4,i;
+clrscr();
+while(choice)
+{
+cout<<"\nSTACK OPERATIONS:\n\n";
+cout<<"\n1.Pop\n2.Display\n3.Exit\n";
+cout<<"\nEnter your choice: ";
+cin>>choice;
+switch(choice)
+{
+case 1: if(top==-1)
+            {
+            cout<<"Stack is empty";
+            getch();
+            continue;
+            }
+            else
+            {
+            for(i=top;i>=0;i--)
+            ele=stack[top];
+            cout<<"The popped element is: "<<ele;
+            top=top-1;
+            }
+            break;
+case 2: if(top==-1)
+            {
+            cout<<"Stack is empty";
+            getch();
+            exit(0);
+            }
+            else
+            {
+            cout<<"Content of stack is:\n";
+            for(i=top;i>=0;i--)
+            cout<<"stack["<<i<<"]="<<stack[i]<<endl;
+            }
+            break;
+case 3: exit(0);
+default: cout<<"Invalid choice";
+}
+}
+getch();
+}

@@ -1,0 +1,51 @@
+#include<iostream.h>
+#include<conio.h>
+#include<stdlib.h>
+#define N 5
+void main()
+{
+int stack[N],i,choice=1,top=-1,ele;
+clrscr();
+while(choice)
+{
+cout<<"\nSTACK OPERATIONS\n\n";
+cout<<"1.Push\n2.Display\n3.Exit\n";
+cout<<"Enter your Choice:";
+cin>>choice;
+switch(choice)
+{
+case 1:cout<<"Enter the element to be pushed:";
+cin>>ele;
+if(top==N-1)
+{
+cout<<"Stack is Full";
+getch();
+exit(0);
+}
+else
+{
+cout<<ele<<" is inserted at "<<top+1;
+top=top+1;
+stack[top]=ele;
+break;
+}
+case 2:cout<<"Content of Stack is:\n";
+if(top==-1)
+{
+cout<<"Stack is Empty";
+getch();
+}
+else
+{
+for(i=top;i>=0;i--)
+cout<<"Stack["<<i<<"]="<<stack[i]<<endl;
+break;
+}
+case 3:exit(0);
+break;
+default:cout<<"Invalid choice";
+}
+}
+getch();
+}
+

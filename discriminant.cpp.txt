@@ -1,0 +1,45 @@
+#include<iostream.h>
+#include<conio.h>
+#include<math.h>
+class quad
+{
+float x1,x2,imaginarypart,realpart,discriminant,a,b,c;
+public: void getdata()
+            {
+            cout<<"Enter the values of a, b, c: ";
+            cin>>a>>b>>c;
+            discriminant=b*b-4*a*c;
+            }
+            void putdata()
+            {
+            if(discriminant>0)
+            {
+            x1=(-b+sqrt(discriminant))/(2*a);
+            x2=(-b-sqrt(discriminant))/(2*a);
+            cout<<"Roots are real and different:\n";
+            cout<<"x1="<<x1<<"and x2="<<x2;
+            }
+            else if(discriminant==0)
+            {
+            x1=-b/(2*a);
+            cout<<"Roots are real and equal\n";
+            cout<<"x1=x2="<<x1;
+            }
+            else
+            {
+            realpart=-b/(2*a);
+            imaginarypart=sqrt(-discriminant)/(2*a);
+            cout<<"Roots are imaginary\n";
+            cout<<realpart<<"+"<<imaginarypart<<"i"<<endl;
+            cout<<realpart<<"-"<<imaginarypart<<"i";
+            }
+            }
+};
+void main()
+{
+quad q;
+clrscr();
+q.getdata();
+q.putdata();
+getch();
+}

@@ -1,0 +1,34 @@
+#include<iostream.h>
+#include<conio.h>
+void main()
+{
+int a[10],i,n,ele,pos=-1,m,b,e;
+clrscr();
+cout<<"Enter the size of an array: ";
+cin>>n;
+cout<<"Enter the elements:\n";
+for(i=0;i<n;i++)
+cin>>a[i];
+cout<<"Enter the search element: ";
+cin>>ele;
+b=0;
+e=n-1;
+while(b<=e)
+{
+m=(b+e)/2;
+if(ele==a[m])
+{
+pos=m;
+break;
+}
+else if(ele<a[m])
+e=m-1;
+else
+b=m+1;
+}
+if(pos>=0)
+cout<<"Location="<<pos;
+else
+cout<<"Search is unsuccessful";
+getch();
+}

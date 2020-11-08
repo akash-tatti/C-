@@ -1,0 +1,28 @@
+#include<iostream.h>
+#include<conio.h>
+class SI
+{
+int time;
+float principal,rate;
+public: void getdata()
+            {
+            cout<<"Enter the principal, time and rate of interest: \n";
+            cin>>principal>>time>>rate;
+            }
+            float compute_si()
+            {
+            return(principal*time*rate/100.0);
+            }
+            void display()
+            {
+            cout<<"Simple Interest="<<compute_si();
+            }
+};
+void main()
+{
+SI s;
+clrscr();
+s.getdata();
+s.display();
+getch();
+}

@@ -1,0 +1,28 @@
+#include<iostream.h>
+#include<conio.h>
+void main()
+{
+int a[10],i,n,ele,p;
+cout<<"Enter the size of an array: ";
+cin>>n;
+cout<<"Enter the elements:\n";
+for(i=0;i<n;i++)
+cin>>a[i];
+cout<<"Enter the element to be inserted: ";
+cin>>ele;
+cout<<"Enter the position (from 0 to "<<n<<")";
+cin>>p;
+if(p>n)
+cout<<"Invalid Position";
+else
+{
+for(i=n-1;i>=p;i--)
+a[i+1]=a[i];
+a[p]=ele;
+n=n+1;
+}
+cout<<"Elements after insertion are:\n";
+for(i=0;i<n;i++)
+cout<<a[i];
+getch();
+}
